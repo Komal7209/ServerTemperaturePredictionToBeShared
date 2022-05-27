@@ -34,5 +34,37 @@ Read more: https://towardsdatascience.com/why-do-we-need-a-validation-set-in-add
 
 ##########################################################
 
+![image](https://user-images.githubusercontent.com/33154959/170734860-e34e61d8-6329-40cf-bb81-41d522468f59.png)
+
+
+### Sequence length usage: 
+So, given i and the sequence_length, we return the block of data from i - sequence_length through row i. If i is at the beginning of the dataset, we pad by repeating the first row as many times as needed to make the output have sequence_length rows. The only trick is avoiding off-by-1 errors in the slicing and padding.
+
+Refer this for more explanation: https://www.crosstab.io/articles/time-series-pytorch-lstm
+
+
+
+
+##########################################################
+
+### criterion:
+This criterion computes the cross entropy loss between input and target.
+
+optimizer.step()
+
+### optimizer.step
+is performs a parameter update based on the current gradient (stored in .grad attribute of a parameter) and the update rule. As an example, the update rule for SGD is defined here:
+https://github.com/pytorch/pytorch/blob/cd9b27231b51633e76e28b6a34002ab83b0660fc/torch/optim/sgd.py#L63 
+
+
+### loss.backward()
+Calling .backward() mutiple times accumulates the gradient (by addition) for each parameter. This is why you should call optimizer.zero_grad() after each .step() call. Note that following the first .backward call, a second call is only possible after you have performed another forward pass.
+
+So for your first question, the update is not the based on the “closest” call but on the .grad attribute. How you calculate the gradient is upto you.
+
+https://discuss.pytorch.org/t/how-are-optimizer-step-and-loss-backward-related/7350
+
+##########################################################
+
 # Model with dataloader: 
 https://colab.research.google.com/drive/1_X306vLbDoXWTheLBvD3tOZ6Mb126d6y#scrollTo=3Y1M2wkzTF88
