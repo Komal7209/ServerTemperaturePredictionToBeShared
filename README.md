@@ -28,6 +28,8 @@ The training set is used to fit the parameters of the model on a fixed combinati
 The validation test is useful for hyperparameter tuning or selecting the best model out of different models. In some contexts, the validation set is also called the Development (Dev) set.
 The performance of that model using the test set
 
+In summary, the training set is used to fit the model parameters, the validation set is used to tune model hyperparameters. Finally, we use the test set to evaluate the best model.
+
 Read more: https://towardsdatascience.com/why-do-we-need-a-validation-set-in-addition-to-training-and-test-sets-5cf4a65550e0
 
 ##########################################################
