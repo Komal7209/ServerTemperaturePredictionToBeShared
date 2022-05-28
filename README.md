@@ -68,3 +68,6 @@ https://discuss.pytorch.org/t/how-are-optimizer-step-and-loss-backward-related/7
 
 # Model with dataloader: 
 https://colab.research.google.com/drive/1_X306vLbDoXWTheLBvD3tOZ6Mb126d6y#scrollTo=3Y1M2wkzTF88
+
+# Model with dataloader with correct data split:
+https://colab.research.google.com/drive/19a_0kZ4qljT_t5aDLPe0VP6vzy3DfUc6#scrollTo=4N8fT51gTq48
